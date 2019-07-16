@@ -103,6 +103,24 @@ func find(_ data: T, root: Node<T>?) -> Node<T> {
 ```
 **Insertion**
 
+```
+private func insert(_ node: TreeNode<T>, into root: TreeNode<T>) {
+        if root.data > node.data {
+            if let leftNode = root.leftNode {
+                self.insert(leftNode, node)
+            } else {
+                root.leftNode = node
+            }
+        } else {
+            if let rightNode = root.rightNode {
+                self.insert(rightNode, node)
+            } else {
+                root.rightNode = node
+            }
+        }
+    }
+```
+
 **Deletion**
 
 **Traversal**
