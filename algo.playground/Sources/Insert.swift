@@ -1,7 +1,13 @@
 import Foundation
 
+// return the head
+public func insert(_ data: Int, into list: ListNode) -> ListNode {
+    return ListNode(data: data, next: list)
+}
+
+
 // INSERTION
-public func insert(node: Node, into tree: Node) {
+public func insert(node: TreeNode, into tree: TreeNode) {
     guard node.data != tree.data else {
         fatalError("I can't handle duplicates!")
     }

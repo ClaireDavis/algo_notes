@@ -1,14 +1,14 @@
 import Foundation
 
-let tree = Node(data: 2)
+let tree = TreeNode(data: 2)
 
-let nine = Node(data: 9)
-let twelve = Node(data: 12)
-let ten = Node(data: 10)
+let nine = TreeNode(data: 9)
+let twelve = TreeNode(data: 12)
+let ten = TreeNode(data: 10)
 
 // INSERT
 insert(node: nine, into: tree)
-insert(node: Node(data: 1), into: tree)
+insert(node: TreeNode(data: 1), into: tree)
 insert(node: twelve, into: tree)
 insert(node: ten, into: tree)
 

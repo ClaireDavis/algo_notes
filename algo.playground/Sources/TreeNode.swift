@@ -2,17 +2,17 @@
 import Foundation
 
 // TODO: Make generic >_>
-public class Node {
+public class TreeNode {
     public let data: Int
-    public var parent: Node?
-    public var left: Node?
-    public var right: Node?
+    public var parent: TreeNode?
+    public var left: TreeNode?
+    public var right: TreeNode?
 
     public init(
         data: Int,
-        parent: Node? = nil,
-        left: Node? = nil,
-        right: Node? = nil) {
+        parent: TreeNode? = nil,
+        left: TreeNode? = nil,
+        right: TreeNode? = nil) {
         self.data = data
         self.parent = parent
         self.left = left
@@ -54,6 +54,6 @@ public class Node {
     }
 }
 
-public func format(_ node: Node) -> String {
+public func format(_ node: TreeNode) -> String {
     return node.description
 }
