@@ -1,6 +1,5 @@
 import Foundation
 
-// Linked List Deletion (returns head)
 private func findPredecessor(of data: Int, in list: ListNode?) -> ListNode? {
     guard let list = list,
         let next = list.next else {
@@ -17,6 +16,7 @@ private func findPredecessor(of data: Int, in list: ListNode?) -> ListNode? {
     }
 }
 
+// Linked List Deletion (returns head)
 public func delete(_ data: Int, from list: ListNode) -> ListNode? {
     // find data
     guard let node = find(data, in: list) else {
@@ -35,4 +35,11 @@ public func delete(_ data: Int, from list: ListNode) -> ListNode? {
 
     // return list's head
     return list // free(node)
+}
+
+// BINARY TREE
+// --> Deletion
+
+public func delete(_ data: Int, from tree: TreeNode) {
+    
 }

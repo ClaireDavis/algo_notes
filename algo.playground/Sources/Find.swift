@@ -14,6 +14,28 @@ public func find(_ data: Int, in node: ListNode?) -> ListNode? {
 }
 
 // BINARY TREE
+// --> Find
+public func find(_ data: Int, in tree: TreeNode?) -> TreeNode? {
+    guard let tree = tree else {
+        print("--> tree is end of the line")
+        return nil
+    }
+
+    guard tree.data != data else {
+        print("--> found \(data) in: \(format(tree))")
+        return tree
+    }
+
+    if data < tree.data {
+        print("--> \(data) is less than \(tree.data)")
+        return find(data, in: tree.left)
+    } else {
+        print("--> \(data) is greater than \(tree.data)")
+        return find(data, in: tree.right)
+    }
+}
+
+
 // --> Find minimum
 public func findMinimum(in tree: TreeNode) -> TreeNode? {
     var min = tree
