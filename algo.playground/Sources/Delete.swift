@@ -41,5 +41,8 @@ public func delete(_ data: Int, from list: ListNode) -> ListNode? {
 // --> Deletion
 
 public func delete(_ data: Int, from tree: TreeNode) {
-    
+    // find it in the tree
+    // handle case where node has no children
+    // one child
+    // both children (cheat: pikc smallest value in right subtree)
 }
