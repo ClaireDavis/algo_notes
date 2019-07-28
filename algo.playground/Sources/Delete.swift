@@ -1,6 +1,6 @@
 import Foundation
 
-// returns head
+// Linked List Deletion (returns head)
 private func findPredecessor(of data: Int, in list: ListNode?) -> ListNode? {
     guard let list = list,
         let next = list.next else {

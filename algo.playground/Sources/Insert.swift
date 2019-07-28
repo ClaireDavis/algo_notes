@@ -1,12 +1,12 @@
 import Foundation
 
-// return the head
+// Linked List insertion (returns the list head)
 public func insert(_ data: Int, into list: ListNode) -> ListNode {
     return ListNode(data: data, next: list)
 }
 
 
-// INSERTION
+// Binary tree insertion
 public func insert(node: TreeNode, into tree: TreeNode) {
     guard node.data != tree.data else {
         fatalError("I can't handle duplicates!")
