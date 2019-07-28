@@ -1,6 +1,12 @@
 
 import Foundation
 
+/*
+ This file contains a ListNode, which is the simplest version of a linked list.
+ Its advantages are a flexible update and nimble resizing. However, it's not
+ great for a fast search.
+*/
+
 // TODO: Make generic >_>
 public class ListNode {
     public let data: Int

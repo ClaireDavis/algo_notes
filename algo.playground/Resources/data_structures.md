@@ -5,8 +5,8 @@
 Data structures are fundamentally about tradeoffs, not the correctness of any given implementation. The maximum benefits of data structures well-suited to a given computational problem are best realized from the beginning. Design your solution around the right data structure!
 
 There are three fundamental, abstract data structures.
-1. Containers
-2. Dictionaries
+1. Containers - content doesn't really matter. You can have a stack of `String` or of  `Cheezit`. Rather, the decisions to be made about containers are retrieval order (e.g. LIFO vs. FIFO), and how that order is determined (e.g. insertion order).
+2. Dictionaries - access works _via_ content. There is some key that points to a full record, such that any new datum makes it easy to derive a key, and therefore find the record. Sorting starts to make significant difference here.
 3. Priority queues
 
 And, data structures are built in memory in one of two ways:

@@ -1,6 +1,11 @@
 
 import Foundation
 
+/*
+ This file contains a node for a binary tree. This data structure is notable
+ because it supports BOTH fast search and flexible update.
+ */
+
 // TODO: Make generic >_>
 public class TreeNode {
     public let data: Int
