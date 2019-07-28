@@ -24,8 +24,10 @@ insert(node: one, into: tree)
 insert(node: twelve, into: tree)
 insert(node: ten, into: tree)
 
-guard let min = findMinimum(in: tree) else { fatalError() }
-print(format(min))
+//guard let min = findMinimum(in: tree) else { fatalError() }
+//print(format(min))
+//
+//guard let max = findMaximum(in: tree) else { fatalError() }
+//print(format(max))
 
-guard let max = findMaximum(in: tree) else { fatalError() }
-print(format(max))
+traverse(tree)
