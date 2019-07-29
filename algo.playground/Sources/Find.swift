@@ -40,9 +40,10 @@ public func find(_ data: Int, in tree: TreeNode?) -> TreeNode? {
 public func findMinimum(in tree: TreeNode) -> TreeNode? {
     var min = tree
     print("--> min starts at \(min.data)")
-    while min.left != nil {
-        print("--> new min is \(min.left!.data)")
-        min = min.left!
+    while let left = min.left {
+        print("--> new min is \(left.data)")
+
+        min = left
     }
 
     return min
@@ -52,9 +53,9 @@ public func findMinimum(in tree: TreeNode) -> TreeNode? {
 public func findMaximum(in tree: TreeNode) -> TreeNode? {
     var max = tree
     print("--> max starts at \(max.data)")
-    while max.right != nil {
-        print("--> new max is \(max.right!.data)")
-        max = max.right!
+    while let right = max.right {
+        print("--> new max is \(right.data)")
+        max = right
     }
 
     return max
