@@ -1,97 +1,57 @@
-import UIKit
 import Foundation
 
-// TODO: Make generic >_>
-class Node {
-    let data: Int
-    var parent: Node?
-    var left: Node?
-    var right: Node?
+let one = TreeNode(data: 1)
+let two = TreeNode(data: 2)
+let three = TreeNode(data: 3)
+let four = TreeNode(data: 4)
+let five = TreeNode(data: 5)
+let six = TreeNode(data: 6)
+let seven = TreeNode(data: 7)
+let eight = TreeNode(data: 8)
+let nine = TreeNode(data: 9)
+let ten = TreeNode(data: 10)
+let eleven = TreeNode(data: 11)
+let twelve = TreeNode(data: 12)
 
-    init(data: Int, parent: Node? = nil, left: Node? = nil, right: Node? = nil) {
-        self.data = data
-        self.parent = parent
-        self.left = left
-        self.right = right
-    }
+//// INSERT
+//let tree = TreeNode(data: 2)
+//insert(node: nine, into: tree)
+//insert(node: TreeNode(data: 1), into: tree)
+//insert(node: twelve, into: tree)
+//insert(node: ten, into: tree)
+//
+//// CHECK INSERT
+//print(format(tree))
+//print(format(nine))
+//print(format(twelve))
 
-    private var parentString: String {
-        if let p = parent {
-            return "parent: \(p.data)"
-        } else {
-            return "parent: none"
-        }
-    }
+/// MIN
+//let tree = TreeNode(data: 7)
+//insert(node: nine, into: tree)
+//insert(node: one, into: tree)
+//insert(node: twelve, into: tree)
+//insert(node: ten, into: tree)
 
-    private var leftString: String {
-        if let l = left {
-            return "left: \(l.data)"
-        } else {
-            return "left: none"
-        }
-    }
+//guard let min = findMinimum(in: tree) else { fatalError() }
+//print(format(min))
 
-    private var rightString: String {
-        if let r = right {
-            return "right: \(r.data)"
-        } else {
-            return "right: none"
-        }
-    }
+/// MAX
+//guard let max = findMaximum(in: tree) else { fatalError() }
+//print(format(max))
 
-    var description: String {
-        return """
-        data: \(data)
-        \(parentString)
-        \(leftString)
-        \(rightString)
-"""
-    }
-}
+/// TRAVERSE
+//traverse(tree)
 
-func format(_ node: Node) -> String {
-    return node.description
-}
+/// DELETION
+let tree = TreeNode(data: 2)
+insert(node: one, into: tree)
+insert(node: seven, into: tree)
+insert(node: four, into: tree)
+insert(node: three, into: tree)
+insert(node: six, into: tree)
+insert(node: five, into: tree)
+insert(node: eight, into: tree)
+//traverse(tree)
 
-let tree = Node(data: 2)
-
-// INSERTION
-func insert(node: Node, into tree: Node) {
-    guard node.data != tree.data else {
-        fatalError("I can't handle duplicates!")
-    }
-
-    if node.data < tree.data {
-        if let left = tree.left {
-            insert(node: node, into: left)
-        } else {
-            tree.left = node
-            node.parent = tree
-        }
-    } else {
-        if let right = tree.right {
-            insert(node: node, into: right)
-        } else {
-            tree.right = node
-            node.parent = tree
-        }
-    }
-}
-
-
-let nine = Node(data: 9)
-let twelve = Node(data: 12)
-let ten = Node(data: 10)
-
-insert(node: nine, into: tree)
-insert(node: Node(data: 1), into: tree)
-insert(node: twelve, into: tree)
-insert(node: ten, into: tree)
-
-print(format(tree))
-print()
-print(format(nine))
-print()
-print(format(twelve))
-
-
+let _ = find(5, in: tree)
+let _ = find(14, in: tree)
