@@ -37,12 +37,71 @@ public func delete(_ data: Int, from list: ListNode) -> ListNode? {
     return list // free(node)
 }
 
-// BINARY TREE
+// BINARY SEARCH TREE
 // --> Deletion
 
-public func delete(_ data: Int, from tree: TreeNode) {
+public func delete(_ data: Int, from tree: TreeNode) -> TreeNode? {
     // find it in the tree
+    guard let found = find(data, in: tree) else {
+        print("--> Did not find \(data)")
+        // doesn't exist so we return ourselves
+        return tree
+    }
+
     // handle case where node has no children
+    if found.isChildless {
+        print("--> Found \(found.data) has no children")
+        
+        if found.isParentsRight {
+            print("--> Found \(found.data) is parent's right")
+            found.parent?.right = nil
+
+            return tree
+        } else if found.isParentsLeft {
+            print("--> Found \(found.data) is parent's left")
+            found.parent?.left = nil
+
+            return tree
+        } else {
+            print("--> Found \(found.data) is the lone node, we delete the whole thing")
+
+            return nil
+        }
+    }
+
     // one child
-    // both children (cheat: pikc smallest value in right subtree)
+    if let onlyChild = found.onlyChild {
+        guard let parent = found.parent else {
+            print("--> Found \(found.data) is the root so our only child is the new root")
+            onlyChild.parent = nil
+            found.disinherit(onlyChild)
+            return onlyChild
+        }
+
+         print("--> Found \(found.data) has only one child so it is now replaces found as found's parent's child")
+        TreeNode.snip(node: found, awayFrom: parent)
+        return tree
+    }
+
+    // both children (cheat: pick smallest value in right subtree)
+
+    if let rightTree = found.right,
+        let nextMe = findMinimum(in: rightTree) {
+
+        // next me by def DOES NOT have a left
+        // next me MAY have a right. Snip the nextMe out (TreeNode.snip)
+
+        // hoist next me to my position
+        // update the parent ref on my left child to point to next me & vice versa
+        // update the parent ref on my right child to point to next me & vice versa
+
+        if let parent = found.parent {
+            // parent disinherites found
+            // parent adopts next me
+        } else {
+            // return next me - it's the new root
+        }
+    }
+
+    return nil
 }

@@ -31,7 +31,7 @@ let twelve = TreeNode(data: 12)
 //insert(node: one, into: tree)
 //insert(node: twelve, into: tree)
 //insert(node: ten, into: tree)
-
+//
 //guard let min = findMinimum(in: tree) else { fatalError() }
 //print(format(min))
 
@@ -53,5 +53,8 @@ insert(node: five, into: tree)
 insert(node: eight, into: tree)
 //traverse(tree)
 
-let _ = find(5, in: tree)
-let _ = find(14, in: tree)
+//let _ = find(5, in: tree)
+//let _ = find(14, in: tree)
+
+let newTree = delete(8, from: tree)
+traverse(newTree)
